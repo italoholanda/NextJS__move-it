@@ -10,7 +10,7 @@ export function Countdown() {
     hasFinished,
     isActive,
     resetCountdown,
-    startCountdown,
+    startCountdown
   } = React.useContext(CountdownContext);
 
   const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");

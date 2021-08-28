@@ -66,7 +66,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         hasFinished,
         startCountdown,
         minutes,
-        seconds,
+        seconds
       }}
     >
       {children}
