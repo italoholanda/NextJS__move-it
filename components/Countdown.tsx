@@ -1,5 +1,6 @@
 import cx from "classnames";
 import React from "react";
+import { ChallengesContext } from "../contexts/ChallengesContext";
 import styles from "../styles/components/Countdown.module.css";
 
 export function Countdown() {
@@ -11,13 +12,15 @@ export function Countdown() {
   const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
   const [hasFinished, setHasFinished] = React.useState(false);
   const [isActive, setIsActive] = React.useState(false);
+  const { startNewChallenge } = React.useContext(ChallengesContext);
 
   React.useEffect(() => {
     if (isActive && time > 0) {
       countdownTimeout = setTimeout(() => {
         setTime(time - 1);
-      }, 1000);
+      }, 0.1);
     } else if (isActive && time === 0) {
+	  startNewChallenge();
       setHasFinished(true);
       setIsActive(false);
     }
