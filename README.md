@@ -42,5 +42,8 @@ $ yarn install
 # Execute
 $ yarn dev
 ```
-
 Now, you can open it in your browser using the following link `http://localhost:3000`.
+
+## Access the live app
+
+Deploy: https://next-js-move-it-delta.vercel.app/
